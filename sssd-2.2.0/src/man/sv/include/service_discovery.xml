@@ -1,0 +1,41 @@
+<refsect1 id='service_discovery'>
+    <title>TJÄNSTEUPPTÄCKT</title>
+    <para>
+        Tjänsteupptäcktsfunktionen gör att bakändar automatiskt kan hitta en lämplig
+server att ansluta till med en speciell DNS-fråga.  Denna funktion stödjs
+inte för backup-servrar.
+    </para>
+    <refsect2 id='configuration'>
+        <title>Configuration</title>
+        <para>
+            Om inga servrar anges använder bakänden automatiskt tjänsteupptäckt för att
+försöka hitta en server.  Användaren kan om så önskas välja att använda både
+en bestämd serveradress och tjänsteupptäckt genom att infoga ett speciellt
+nyckelord, <quote>_srv_</quote>, i listan av servrar.  Prefernsordningen
+bibehålls.  Denna funktion är användbar om, till exempel, användaren
+föredrar att använda tjänsteupptäckt närhelst det är möjligt, och falla
+tillbaka på en specifik server när inga servrar kan upptäckas med DNS.
+        </para>
+    </refsect2>
+    <refsect2 id='domain_name'>
+        <title>The domain name</title>
+        <para>
+            Please refer to the <quote>dns_discovery_domain</quote> parameter in the
+<citerefentry> <refentrytitle>sssd.conf</refentrytitle>
+<manvolnum>5</manvolnum> </citerefentry> manual page for more details.
+        </para>
+    </refsect2>
+    <refsect2 id='search_protocol'>
+        <title>The protocol</title>
+        <para>
+            The queries usually specify _tcp as the protocol. Exceptions are documented
+in respective option description.
+        </para>
+    </refsect2>
+    <refsect2 id='reference'>
+        <title>Se även</title>
+        <para>
+            För mer information om tjänsteupptäcktsmekanismen, se RFC 2782.
+        </para>
+    </refsect2>
+</refsect1>
